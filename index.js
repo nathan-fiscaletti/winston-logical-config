@@ -31,20 +31,3 @@ module.exports = {
         return winston.createLogger(parsed);
     }
 };
-
-const main = async () => {
-    // const conf = {
-    //     level: 'info',
-    //     levels: '{winston.config.npm.levels}',
-    //     format: '{winston.format.simple}',
-    //     transports: [ '{winston.transports.Console;[{"level":"info"}]}' ],
-    //     exitOnError: true,
-    //     silent: false
-    // };
-    
-    const logger = await WinstonLogicalConfig.createLoggerFromYAMLFile('./example.yaml');
-
-    logger.info("test");
-};
-
-main();
