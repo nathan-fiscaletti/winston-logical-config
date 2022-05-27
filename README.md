@@ -10,7 +10,7 @@ $ yarn add winston-logical-config
 
 ## Example
 
-`config.yaml`
+**config.yaml**
 ```yaml
 level: 'debug'
 levels: '{winston.config.npm.levels}'
@@ -21,13 +21,13 @@ exitOnError: true
 silent: false
 ```
 
-`example.js`
+**example.js**
 ```js
 const WinstonLogicalConfig = require('./');
 
 const main = async () => {
     const logger = await WinstonLogicalConfig
-                     .createLoggerFromYAMLFile('./example.yaml');
+                     .createLoggerFromYAMLFile('./config.yaml');
 
     logger.info('test');
 };
