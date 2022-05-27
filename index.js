@@ -5,28 +5,29 @@ const yaml = require('js-yaml');
 const fs   = require('fs');
 
 module.exports = {
-    createLogger: async (config, map) => {
-        const parsed = await LogicalConfig.fill(
-            config, { winston, ...map }
-        );
+    createLogger: async (config, data) => {
+        const parsed = await LogicalConfig.fill({
+            input: config,
+            data: { winston, ...data }
+        });
 
         return winston.createLogger(parsed);
     },
 
-    createLoggerFromYAMLFile: async (file, map) => {
-        const parsed = await LogicalConfig.fill(
-            yaml.load(fs.readFileSync(file, 'utf8')),
-            { winston, ...map }
-        );
+    createLoggerFromYAMLFile: async (file, data) => {
+        const parsed = await LogicalConfig.fill({
+            input: yaml.load(fs.readFileSync(file, 'utf8')),
+            data: { winston, ...data }
+        });
 
         return winston.createLogger(parsed);
     },
 
-    createLoggerFromJSONFile: async (file, map) => {
-        const parsed = await LogicalConfig.fill(
-            require(`${file}`),
-            { winston, ...map }
-        );
+    createLoggerFromJSONFile: async (file, data) => {
+        const parsed = await LogicalConfig.fill({
+            input: require(`${file}`),
+            data: { winston, ...data }
+        });
 
         return winston.createLogger(parsed);
     }

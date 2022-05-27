@@ -12,20 +12,20 @@ $ yarn add winston-logical-config
 
 `config.yaml`
 ```yaml
-level: 'info'
+level: 'debug'
 levels: '{winston.config.npm.levels}'
-format: '{winston.format.simple}'
+format: '{winston.format.cli;[{"colors":{"info":"blue","error":"red"}}]}'
 transports:
-  - '{winston.transports.Console;[{"level":"info"}]}'
+  - '{winston.transports.Console;[{"level":"debug"}]}'
 exitOnError: true
 silent: false
 ```
 
 `example.js`
 ```js
-const WinstonLogicalConfig = require('winston-logical-config');
+const WinstonLogicalConfig = require('./');
 
-const main() => async () => {
+const main = async () => {
     const logger = await WinstonLogicalConfig
                      .createLoggerFromYAMLFile('./example.yaml');
 

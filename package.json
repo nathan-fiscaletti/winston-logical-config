@@ -1,6 +1,6 @@
 {
   "name": "winston-logical-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A logical configuration mapping for winston-js",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "repository": "github:nathan-fiscaletti/winston-logical-config",
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "logical-config": "^1.0.1",
+    "logical-config": "^1.0.3",
     "winston": "^3.7.2"
   }
 }
