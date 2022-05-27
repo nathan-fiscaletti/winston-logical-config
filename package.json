@@ -1,0 +1,21 @@
+{
+  "name": "winston-logical-config",
+  "version": "1.0.0",
+  "description": "A logical configuration mapping for winston-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Nathan Fiscaletti",
+    "email": "nate.fiscaletti@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/nathan-fiscaleti/winston-logical-config",
+  "repository": "github:nathan-fiscaletti/winston-logical-config",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "logical-config": "^1.0.1",
+    "winston": "^3.7.2"
+  }
+}
